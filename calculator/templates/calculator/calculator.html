@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A powerful and user-friendly calculator application">
+    <meta name="keywords" content="calculator, math, arithmetic, JavaScript">
+    <meta name="author" content="Venkatadri Majjari">
+    <title>Calculator</title>
+    {% load static %}
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'calculator/styles.css' %}">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">CALCULATOR</h3>
+                        <form id="calculator-form">
+                            <div class="form-group">
+                                <input type="text" id="display" class="form-control text-right" disabled>
+                            </div>
+                            <div class="row">
+                                <div class="col-3">
+                                    <button type="button" class="btn btn-primary btn-block" onclick="appendNumber('7')">7</button>
+                                </div>
+                                <div class="col-3">
+                                    <button type="button" class="btn btn-primary btn-block" onclick="appendNumber('8')">8</button>
+                                </div>
+                                <div class="col-3">
+                                    <button type="button" class="btn btn-primary btn-block" onclick="appendNumber('9')">9</button>
+                                </div>
+                                <div class="col-3">
+                                    <button type="button" class="btn btn-danger btn-block" onclick="appendOperator('/')">/</button>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-3">
+                                    <button type="button" class="btn btn-primary btn-block" onclick="appendNumber('4')">4</button>
+                                </div>
+                                <div class="col-3">
+                                    <button type="button" class="btn btn-primary btn-block" onclick="appendNumber('5')">5</button>
+                                </div>
+                                <div class="col-3">
+                                    <button type="button" class="btn btn-primary btn-block" onclick="appendNumber('6')">6</button>
+                                </div>
+                                <div class="col-3">
+                                    <button type="button" class="btn btn-danger btn-block" onclick="appendOperator('*')">*</button>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-3">
+                                    <button type="button" class="btn btn-primary btn-block" onclick="appendNumber('1')">1</button>
+                                </div>
+                                <div class="col-3">
+                                    <button type="button" class="btn btn-primary btn-block" onclick="appendNumber('2')">2</button>
+                                </div>
+                                <div class="col-3">
+                                    <button type="button" class="btn btn-primary btn-block" onclick="appendNumber('3')">3</button>
+                                </div>
+                                <div class="col-3">
+                                    <button type="button" class="btn btn-danger btn-block" onclick="appendOperator('-')">-</button>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-6">
+                                    <button type="button" class="btn btn-primary btn-block" onclick="appendNumber('0')">0</button>
+                                </div>
+                                <div class="col-3">
+                                    <button type="button" class="btn btn-danger btn-block" onclick="appendOperator('+')">+</button>
+                                </div>
+                                <div class="col-3">
+                                    <button type="button" class="btn btn-success btn-block" onclick="calculate()">=</button>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-6">
+                                    <button type="button" class="btn btn-warning btn-block" onclick="clearDisplay()">C</button>
+                                </div>
+                                <div class="col-6">
+                                    <button type="button" class="btn btn-danger btn-block" onclick="deleteLast()">Del</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{% static 'calculator/scripts.js' %}"></script>
+</body>
+</html>
